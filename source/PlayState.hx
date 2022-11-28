@@ -1266,13 +1266,12 @@ class PlayState extends MusicBeatState
 		if (loadRep)
 			replayTxt.cameras = [camHUD];
 
+   	#if android
+		addAndroidControls();
+		androidc.visible = true;		
+		#end		
 		
-			#if android		
-			addAndroidControls();		
-			androidControls.visible = true;	
-			#end		
-					
-				// if (SONG.song == 'South')
+		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
 		// UI_camera.zoom = 1;
 
@@ -1333,8 +1332,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (!loadRep)
-			rep = new Replay("na");
+		
 
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN,handleInput);
 
@@ -3466,11 +3464,7 @@ class PlayState extends MusicBeatState
 					releaseArray = [false, false, false, false];
 				} 
 
-				var anas:Array<Ana> = [null,null,null,null];
-
-				for (i in 0...pressArray.length)
-					if (pressArray[i])
-						anas[i] = new Ana(Conductor.songPosition, null, false, "miss", i);
+				
 
 				// HOLDS, check for sustain notes
 				if (holdArray.contains(true) && /*!boyfriend.stunned && */ generatedMusic)
@@ -3482,8 +3476,7 @@ class PlayState extends MusicBeatState
 					});
 				}
 		 
-				if (KeyBinds.gamepad && !FlxG.keys.justPressed.ANY)
-				{
+				
 					// PRESSES, check for note hits
 					if (pressArray.contains(true) && generatedMusic)
 					{
@@ -3554,9 +3547,7 @@ class PlayState extends MusicBeatState
 										mashViolations--;
 									scoreTxt.color = FlxColor.WHITE;
 									var noteDiff:Float = -(coolNote.strumTime - Conductor.songPosition);
-									anas[coolNote.noteData].hit = true;
-									anas[coolNote.noteData].hitJudge = Ratings.CalculateRating(noteDiff, Math.floor((PlayStateChangeables.safeFrames / 60) * 1000));
-									anas[coolNote.noteData].nearestNote = [coolNote.strumTime,coolNote.noteData,coolNote.sustainLength];
+									
 									goodNoteHit(coolNote);
 								}
 							}
@@ -3569,11 +3560,7 @@ class PlayState extends MusicBeatState
 							}
 					}
 
-					if (!loadRep)
-						for (i in anas)
-							if (i != null)
-								replayAna.anaArray.push(i); // put em all there
-				}
+					
 				notes.forEachAlive(function(daNote:Note)
 				{
 					if(PlayStateChangeables.useDownscroll && daNote.y > strumLine.y ||
@@ -3679,7 +3666,7 @@ class PlayState extends MusicBeatState
 
 			public function backgroundVideo(source:String) // for background videos
 				{
-					#if cpp
+					#if android
 					useVideo = true;
 			
 					FlxG.stage.window.onFocusOut.add(focusOut);
