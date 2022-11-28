@@ -1702,8 +1702,8 @@ class PlayState extends MusicBeatState
 			default: allowedToHeadbang = false;
 		}
 
-		if (useVideo)
-			GlobalVideo.get().resume();
+		
+			
 		
 		#if windows
 		// Updating Discord Rich Presence (with Time Left)
@@ -2122,9 +2122,9 @@ class PlayState extends MusicBeatState
 			}
 			
 
-		if (useVideo && GlobalVideo.get() != null && !stopUpdate)
+		
 			{		
-				if (GlobalVideo.get().ended && !removedVideo)
+				
 				{
 					remove(videoSprite);
 					FlxG.stage.window.onFocusOut.remove(focusOut);
@@ -2261,10 +2261,10 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.SEVEN)
 		{
-			if (useVideo)
+			
 				{
-					GlobalVideo.get().stop();
-					remove(videoSprite);
+					
+					
 					FlxG.stage.window.onFocusOut.remove(focusOut);
 					FlxG.stage.window.onFocusIn.remove(focusIn);
 					removedVideo = true;
@@ -2338,9 +2338,9 @@ class PlayState extends MusicBeatState
 		
 		if (FlxG.keys.justPressed.SIX)
 		{
-			if (useVideo)
+			
 				{
-					GlobalVideo.get().stop();
+					
 					remove(videoSprite);
 					FlxG.stage.window.onFocusOut.remove(focusOut);
 					FlxG.stage.window.onFocusIn.remove(focusIn);
@@ -2934,9 +2934,9 @@ class PlayState extends MusicBeatState
 	function endSong():Void
 		{
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
-			if (useVideo)
+			
 				{
-					GlobalVideo.get().stop();
+					
 					FlxG.stage.window.onFocusOut.remove(focusOut);
 					FlxG.stage.window.onFocusIn.remove(focusIn);
 					PlayState.instance.remove(PlayState.instance.videoSprite);
@@ -3684,7 +3684,7 @@ class PlayState extends MusicBeatState
 					remove(gf);
 					remove(boyfriend);
 					remove(dad);
-					add(videoSprite);
+					
 					add(gf);
 					add(boyfriend);
 					add(dad);
