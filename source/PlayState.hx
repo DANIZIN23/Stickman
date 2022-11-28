@@ -732,7 +732,7 @@ class PlayState extends MusicBeatState
 			
 						trace("caching images...");
 						
-							for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/kack")))
+							for (i in HSys.readDirectory(Main.path + "assets/shared/images/kack"))
 								{
 									if (!i.endsWith(".png"))
 										continue;
@@ -779,7 +779,7 @@ class PlayState extends MusicBeatState
 			
 						trace("caching images...");
 						
-							for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/kack")))
+							for (i in HSys.readDirectory(Main.path + "assets/shared/images/kack"))
 								{
 									if (!i.endsWith(".png"))
 										continue;
@@ -830,7 +830,7 @@ class PlayState extends MusicBeatState
 			
 						trace("caching images...");
 						
-							for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/disy")))
+							for (i in HSys.readDirectory(Main.path + "assets/shared/images/disy"))
 								{
 									if (!i.endsWith(".png"))
 										continue;
@@ -3012,7 +3012,7 @@ class PlayState extends MusicBeatState
 								paused = true;
 								FlxG.sound.music.stop();
 								vocals.stop();
-								video.playMP4(Paths.video('cre'), new MainMenuState()); 
+								
 							case 'wrath-soul':
 								transIn = FlxTransitionableState.defaultTransIn;
 								transOut = FlxTransitionableState.defaultTransOut;
@@ -3021,7 +3021,7 @@ class PlayState extends MusicBeatState
 								paused = true;
 								FlxG.sound.music.stop();
 								vocals.stop();
-								video.playMP4(Paths.video('disy'), new MainMenuState()); 
+								
 
 						}
 
@@ -3044,7 +3044,7 @@ class PlayState extends MusicBeatState
 	
 						if (SONG.validScore)
 						{
-							NGio.unlockMedal(60961);
+							
 							Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 						}
 	
@@ -3085,12 +3085,12 @@ class PlayState extends MusicBeatState
 							   inCutscene = true;
 							   PlayState.isStoryMode = true;
 							   paused = true;
-				         	   video.playMP4(Paths.video('song2'), new PlayState()); 
+				         	   
 								
 							case "fight":
 								inCutscene = true;
 								paused = true;
-								video.playMP4(Paths.video('song3'), new PlayState()); 
+								
                        	 	default:
                            		LoadingState.loadAndSwitchState(new PlayState());
                      	}
@@ -3663,14 +3663,14 @@ class PlayState extends MusicBeatState
 
 			public function backgroundVideo(source:String) // for background videos
 				{
-					#if android
+					#if cpp
 					useVideo = true;
 			
 					FlxG.stage.window.onFocusOut.add(focusOut);
 					FlxG.stage.window.onFocusIn.add(focusIn);
 
 					var ourSource:String = "assets/videos/daWeirdVid/dontDelete.webm";
-					WebmPlayer.SKIP_STEP_LIMIT = 90;
+					
 					var str1:String = "WEBM SHIT"; 
 					webmHandler = new WebmHandler();
 					webmHandler.source(ourSource);
