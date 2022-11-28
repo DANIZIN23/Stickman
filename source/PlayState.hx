@@ -734,13 +734,7 @@ class PlayState extends MusicBeatState
 						
 							
 								{
-									if (!i.endsWith(".png"))
-										continue;
-									images.push(i);
-						
-									if (!i.endsWith(".xml"))
-										continue;
-									xml.push(i);
+									
 								}
 							for (i in images)
 									{
@@ -781,13 +775,7 @@ class PlayState extends MusicBeatState
 						
 							
 								{
-									if (!i.endsWith(".png"))
-										continue;
-									images.push(i);
-						
-									if (!i.endsWith(".xml"))
-										continue;
-									xml.push(i);
+									
 								}
 							for (i in images)
 									{
@@ -797,7 +785,7 @@ class PlayState extends MusicBeatState
 										trace("cached " + replaced);
 									}
 								
-								for (i in xml)
+								
 									{
 										var replaced = i.replace(".xml","");
 										FlxG.bitmap.add(Paths.image("kack/" + replaced,"shared"));
@@ -832,13 +820,7 @@ class PlayState extends MusicBeatState
 						
 							
 								{
-									if (!i.endsWith(".png"))
-										continue;
-									images.push(i);
-						
-									if (!i.endsWith(".xml"))
-										continue;
-									xml.push(i);
+									
 								}
 							for (i in images)
 									{
