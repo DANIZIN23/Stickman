@@ -787,7 +787,7 @@ class PlayState extends MusicBeatState
 								
 								
 									{
-										var replaced = i.replace(".xml","");
+										
 										FlxG.bitmap.add(Paths.image("kack/" + replaced,"shared"));
 										
 										trace("cached " + replaced);
