@@ -3663,8 +3663,7 @@ class PlayState extends MusicBeatState
 
 			public function backgroundVideo(source:String) // for background videos
 				{
-					#if cpp
-					useVideo = true;
+					
 			
 					FlxG.stage.window.onFocusOut.add(focusOut);
 					FlxG.stage.window.onFocusIn.add(focusIn);
@@ -3673,7 +3672,7 @@ class PlayState extends MusicBeatState
 					
 					
 			
-					GlobalVideo.setWebm(webmHandler);
+					
 
 					GlobalVideo.get().source(source);
 					GlobalVideo.get().clearPause();
