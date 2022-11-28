@@ -732,7 +732,7 @@ class PlayState extends MusicBeatState
 			
 						trace("caching images...");
 						
-							for (i in HSys.readDirectory(Main.path + "assets/shared/images/kack"))
+							
 								{
 									if (!i.endsWith(".png"))
 										continue;
@@ -779,7 +779,7 @@ class PlayState extends MusicBeatState
 			
 						trace("caching images...");
 						
-							for (i in HSys.readDirectory(Main.path + "assets/shared/images/kack"))
+							
 								{
 									if (!i.endsWith(".png"))
 										continue;
@@ -830,7 +830,7 @@ class PlayState extends MusicBeatState
 			
 						trace("caching images...");
 						
-							for (i in HSys.readDirectory(Main.path + "assets/shared/images/disy"))
+							
 								{
 									if (!i.endsWith(".png"))
 										continue;
@@ -2126,7 +2126,7 @@ class PlayState extends MusicBeatState
 			{		
 				
 				{
-					remove(videoSprite);
+					
 					FlxG.stage.window.onFocusOut.remove(focusOut);
 					FlxG.stage.window.onFocusIn.remove(focusIn);
 					removedVideo = true;
@@ -2341,7 +2341,7 @@ class PlayState extends MusicBeatState
 			
 				{
 					
-					remove(videoSprite);
+					
 					FlxG.stage.window.onFocusOut.remove(focusOut);
 					FlxG.stage.window.onFocusIn.remove(focusIn);
 					removedVideo = true;
@@ -2939,7 +2939,7 @@ class PlayState extends MusicBeatState
 					
 					FlxG.stage.window.onFocusOut.remove(focusOut);
 					FlxG.stage.window.onFocusIn.remove(focusIn);
-					PlayState.instance.remove(PlayState.instance.videoSprite);
+					
 				}
 	
 			if (isStoryMode)
