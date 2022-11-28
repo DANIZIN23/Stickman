@@ -3671,11 +3671,7 @@ class PlayState extends MusicBeatState
 
 					var ourSource:String = "assets/videos/daWeirdVid/dontDelete.webm";
 					
-					var str1:String = "WEBM SHIT"; 
-					webmHandler = new WebmHandler();
-					webmHandler.source(ourSource);
-					webmHandler.makePlayer();
-					webmHandler.webm.name = str1;
+					
 			
 					GlobalVideo.setWebm(webmHandler);
 
@@ -3694,7 +3690,7 @@ class PlayState extends MusicBeatState
 						GlobalVideo.get().play();
 					}
 					
-					var data = webmHandler.webm.bitmapData;
+					
 			
 					videoSprite = new FlxSprite(-470,-30).loadGraphic(data);
 			
@@ -3710,11 +3706,7 @@ class PlayState extends MusicBeatState
 			
 					trace('poggers');
 			
-					if (!songStarted)
-						webmHandler.pause();
-					else
-						webmHandler.resume();
-					#end
+					
 				}
 
 	function noteMiss(direction:Int = 1, daNote:Note):Void
