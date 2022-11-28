@@ -3632,13 +3632,13 @@ class PlayState extends MusicBeatState
 				}
 
 			public var fuckingVolume:Float = 1;
-			public var useVideo = false;
+			
 
-			public static var webmHandler:WebmHandler;
+			
 
 			public var playingDathing = false;
 
-			public var videoSprite:FlxSprite;
+			
 
 			public function focusOut() {
 				if (paused)
@@ -3674,26 +3674,12 @@ class PlayState extends MusicBeatState
 			
 					
 
-					GlobalVideo.get().source(source);
-					GlobalVideo.get().clearPause();
-					if (GlobalVideo.isWebm)
-					{
-						GlobalVideo.get().updatePlayer();
-					}
-					GlobalVideo.get().show();
-			
-					if (GlobalVideo.isWebm)
-					{
-						GlobalVideo.get().restart();
-					} else {
-						GlobalVideo.get().play();
-					}
 					
 					
 			
-					videoSprite = new FlxSprite(-470,-30).loadGraphic(data);
+					
 			
-					videoSprite.setGraphicSize(Std.int(videoSprite.width * 1.2));
+					
 			
 					remove(gf);
 					remove(boyfriend);
