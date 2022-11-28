@@ -7,9 +7,7 @@ import openfl.ui.Keyboard;
 import openfl.events.KeyboardEvent;
 import Replay.Ana;
 import Replay.Analysis;
-#if cpp
-import webm.WebmPlayer;
-#end
+
 import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
 import openfl.geom.Matrix;
@@ -241,8 +239,7 @@ class PlayState extends MusicBeatState
 	public function addObject(object:FlxBasic) { add(object); }
 	public function removeObject(object:FlxBasic) { remove(object); }
 
-	//Video
-	var video:MP4Handler = new MP4Handler();
+	
 
 	//Disy Room Bitch
 	var room:FlxSprite;
