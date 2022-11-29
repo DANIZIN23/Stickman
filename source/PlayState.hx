@@ -788,9 +788,9 @@ class PlayState extends MusicBeatState
 								
 									{
 										
-										FlxG.bitmap.add(Paths.image("kack/" + replaced,"shared"));
 										
-										trace("cached " + replaced);
+										
+										
 									}
 						var bg:FlxSprite = new FlxSprite(-3000, -200).loadGraphic(Paths.image('kack/Jack BG'));
 						bg.antialiasing = true;
